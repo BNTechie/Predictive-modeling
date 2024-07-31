@@ -55,7 +55,7 @@ Install FastAPI and Uvicorn
 ```
 pip install fastapi uvicorn pydantic joblib
 
-```'
+```
 
 
 Create the FastAPI Application
