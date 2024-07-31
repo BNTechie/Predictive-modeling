@@ -40,3 +40,54 @@ joblib.dump(model, 'iris_model.pkl')
 print("Model trained and saved successfully!")
 
 ```
+Run the script to train and save the model:
+
+```
+python train_model.py
+
+```
+
+### Step 2: Create a FastAPI Application
+Next, we'll create a FastAPI application to serve the trained model.
+
+Install FastAPI and Uvicorn
+
+```
+pip install fastapi uvicorn pydantic joblib
+
+```'
+
+
+Create the FastAPI Application
+
+Create a file named app.py:
+
+```
+from fastapi import FastAPI
+from pydantic import BaseModel
+import joblib
+import numpy as np
+
+# Load the trained model
+model = joblib.load('iris_model.pkl')
+
+# Create a FastAPI instance
+app = FastAPI()
+
+# Define the input data model
+class IrisInput(BaseModel):
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
+
+# Define the prediction endpoint
+@app.post("/predict")
+def predict(iris: IrisInput):
+    data = np.array([[iris.sepal_length, iris.sepal_width, iris.petal_length, iris.petal_width]])
+    prediction = model.predict(data)
+    return {"prediction": int(prediction[0])}
+
+```
+
+
