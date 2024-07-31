@@ -95,3 +95,13 @@ Run the FastAPI Application
 uvicorn app:app --reload
 
 ```
+### Step 3: Test the API
+
+You can test the API using curl, Postman, or any other HTTP client.
+
+Using curl:
+
+```
+curl -X POST "http://localhost:8000/predict" -H "Content-Type: application/json" -d '{"sepal_length": 5.1, "sepal_width": 3.5, "petal_length": 1.4, "petal_width": 0.2}'
+
+```
