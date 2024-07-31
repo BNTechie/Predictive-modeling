@@ -90,4 +90,8 @@ def predict(iris: IrisInput):
 
 ```
 
+Run the FastAPI Application
+```
+uvicorn app:app --reload
 
+```
