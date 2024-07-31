@@ -170,3 +170,26 @@ CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
 Build the Docker Image
 
 Open a terminal, navigate to the directory containing your Dockerfile, and run:
+
+```
+sudo docker build -t iris-model-api .
+
+```
+Run the Docker Container
+
+Run the following command to start the container:
+
+```
+sudo docker run -d -p 80:80 iris-model-api
+
+```
+Test the API
+
+Use a tool like Postman or curl to send a POST request to your running API:
+
+```
+curl -X POST "http://localhost/predict" -H "Content-Type: application/json" -d '{"sepal_length": 5.1, "sepal_width": 3.5, "petal_length": 1.4, "petal_width": 0.2}'
+
+```
+
+ This setup includes training and saving the model, creating and running the FastAPI application, and containerizing it with Docker for easy deployment. This demonstrates how APIs can be used to make machine learning models accessible and usable in various applications and services.
