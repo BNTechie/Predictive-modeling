@@ -8,7 +8,7 @@ This repository contains a Jupyter Notebook that demonstrates different methods 
 
 ## Contents
 
-- [hyperparameter_tuning.ipynb](https://github.com/BhadraNivedita/Hyper-parameter-Optimization-in-Machine-Leaning-model/blob/main/Hyperparametr%20Optimization.ipynb): The Jupyter Notebook with the complete code and explanations.
+- [hyperparameter_tuning.ipynb](https://github.com/BhadraNivedita/Predictive-modeling/blob/main/Hyperparameter%20Optimization/Hyperparametr%20Optimization.ipynb): The Jupyter Notebook with the complete code and explanations.
 - `README.md`: This file, providing an overview of the project.
 
 ## Requirements
